@@ -5,9 +5,13 @@
 
   <meta charset="UTF-8">
 
+  <!-- linkinng in the reset style sheet - best practice-->
   <link rel="stylesheet" href="./assets/css/reset.css">
+  <!-- linking in the bootstrap style sheet via CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+  <!-- bootstrap provided jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- linking in my specific javascript file to run the game -->
   <script src="./assets/javascript/jsscript.js"></script>
 
   <title>Word Guess aka Hang Man</title>
@@ -15,10 +19,14 @@
 </head>
 
 <body>
+
   <div class="container-fluid">
-    <div class= "row">
-      <div class="col">
-          
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-10">
+
         <ul class="nav justify-content-end">
             <li class="nav-item">
               <a class="nav-link active" href="#">Home</a>
@@ -32,13 +40,66 @@
           </ul>
       
         <div class="jumbotron jumbotron-fluid">
-            <h1 class="display-4">Word Guess (aka Hang Man)</h1>
-            <p>Welcome to my (tbd) themed word guess game.</p>
+            <h1 class="display-4 text-center">Word Guess (aka Hang Man)</h1>
+            <h2 class="text-center">Welcome to my Trump themed word guess game.</h2>
         </div>
+      </div>
+      <div class="col-md-1">
+
       </div>
     </div>
   </div>
 
+  <div class="container-fluid">
+    <div class="row">
+      <!-- spacer column on left-->
+      <div class="col-md-1">
+      </div>
+      <!-- where the user will guess letters in the word-->
+      <div class="col-md-3" id="guessing">
+        <p>Enter your individual letterguesses in the field below:</p>
+        <input type="text" id="userEntry" onkeyup="caseCorrection()">
+      </div>
+      <!-- where incorrect guesses will be displayed-->
+      <div class="col-md-4" id="lettersGuessed">
+        <p>Letters you have already guessed</p>
+      </div>
+      <!-- where the number of guesses left is displayed-->
+      <div class="col-md-3" id="remainingGuesses">
+        <p>Guesses remaining:</p>
+      </div>
+      <!-- spacer column on right-->
+      <div class="col-md-1">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- spacer column on left-->
+      <div class="col-md-1">
+      </div>
+      <!-- where the word will be revealed uppon successful guesses-->
+      <div class="col-md-10 text-center" id="wordReveal">
+        <p>Word to Solve</p>
+      </div>
+      <!-- spacer column on right-->
+      <div class="col-md-1">
+      </div>
+    </div>
+
+  </div>
+  
+  <script>
+  
+    //display the hidden word
+    showWord();
+
+    //display the number of guesses remaining
+    guessesRemaining();
+  
+  </script>
+  
 </body>
 
 </html>
