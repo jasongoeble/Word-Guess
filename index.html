@@ -30,14 +30,7 @@
         <ul class="nav justify-content-end">
             <li class="nav-item">
               <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./instructions.html">Instructions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact</a>
-            </li>
-          </ul>
+        </ul>
       
         <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4 text-center">Word Guess (aka Hang Man)</h1>
@@ -58,15 +51,18 @@
       <!-- where the user will guess letters in the word-->
       <div class="col-md-3" id="guessing">
         <p>Enter your individual letterguesses in the field below:</p>
-        <input type="text" id="userEntry" onkeyup="caseCorrection()">
+        <input type="text" id="userEntry" onkeyup="caseCorrection()" >
       </div>
       <!-- where incorrect guesses will be displayed-->
-      <div class="col-md-4" id="lettersGuessed">
+      <div class="col-md-3" id="lettersGuessed">
         <p>Letters you have already guessed</p>
       </div>
       <!-- where the number of guesses left is displayed-->
-      <div class="col-md-3" id="remainingGuesses">
+      <div class="col-md-2" id="remainingGuesses">
         <p>Guesses remaining:</p>
+      </div>
+      <div class="col-md-2" id="totalWins">
+        <p> Total Wins:</p>
       </div>
       <!-- spacer column on right-->
       <div class="col-md-1">
